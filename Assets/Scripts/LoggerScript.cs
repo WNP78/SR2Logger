@@ -10,15 +10,23 @@
 
         float _period;
 
+        bool _wasEnabled = false;
+
         public void SetFrequency(float freq)
         {
-            if (freq <= 0)
+            if (freq <= 0 && _wasEnabled)
             {
                 OnDisable();
+                _wasEnabled = false;
                 return;
             }
 
-            OnEnable();
+            if (!_wasEnabled)
+            {
+                OnEnable();
+                _wasEnabled = true;
+            }
+
             _time = 0;
             _period = 1f / freq;
         }
