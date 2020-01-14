@@ -103,6 +103,8 @@
             logger.Send(FieldNames.SphereOfInfluence, craft.SphereOfInfluence);
             logger.Send(FieldNames.SurfacePosition, craft.SurfacePosition);
             logger.Send(FieldNames.SurfaceRotation, craft.SurfaceRotation);
+
+            logger.FinishSend();
         }
     }
 

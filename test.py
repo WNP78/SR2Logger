@@ -89,14 +89,23 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind(("127.0.0.1", 2873))
 
 def process(data):
-    nm, tp = struct.unpack("iB", data[:5])
-    fmt = TypeFormats[tp]
-    if fmt == None:
-        val = None # null type
-    else:
-        val = struct.unpack(fmt, data[5:5 + struct.calcsize(fmt)])
-    print(FieldNames[nm], ": ", val, sep="")
+    pos = 0
+    st = ""
+    while pos < len(data):
+        nm, tp = struct.unpack("iB", data[pos:pos + 5])
+        pos += 5
+        fmt = TypeFormats[tp]
+        if fmt == None:
+            val = None # null type
+        else:
+            l = struct.calcsize(fmt)
+            val = struct.unpack(fmt, data[pos:pos + l])
+            pos += l
+            if len(val) == 1: val = val[0]
+
+        st += FieldNames[nm] + ": " + str(val) + "\n"
+    print(st)
 
 while 1:
-        d, a = s.recvfrom(256)
+        d, a = s.recvfrom(2048)
         process(d)

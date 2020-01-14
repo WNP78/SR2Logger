@@ -23,6 +23,10 @@ namespace Assets.Scripts
 
         LoggerScript _script;
 
+        MemoryStream _stream;
+
+        BinaryWriter _writer;
+
         /// <summary>
         /// Prevents a default instance of the <see cref="LoggerMod"/> class from being created.
         /// </summary>
@@ -68,9 +72,9 @@ namespace Assets.Scripts
             _client = new UdpClient(_port);
         }
 
-        internal void SendPacket(byte[] bytes)
+        internal void SendPacket(byte[] bytes, int length)
         {
-            _client.Send(bytes, bytes.Length, "localhost", _port);
+            _client.Send(bytes, length, "localhost", _port);
         }
 
         /// <summary>
@@ -81,8 +85,17 @@ namespace Assets.Scripts
         /// <param name="data">The data.</param>
         public void Send(FieldNames field, object data)
         {
-            MemoryStream stream = new MemoryStream();
-            BinaryWriter writer = new BinaryWriter(stream);
+            if (this._stream == null)
+            {
+                this._stream = new MemoryStream();
+            }
+            if (this._writer == null)
+            {
+                this._writer = new BinaryWriter(this._stream);
+            }
+            MemoryStream stream = this._stream;
+            BinaryWriter writer = this._writer;
+
             writer.Write((int)field);
             if (data == null)
             {
@@ -150,7 +163,16 @@ namespace Assets.Scripts
                 throw new ArgumentException($"Type {data.GetType().Name} not supported.");
             }
 
-            SendPacket(stream.ToArray());
+            //SendPacket(stream.GetBuffer(), (int)stream.Length);
+        }
+
+        public void FinishSend()
+        {
+            var buffer = _stream.GetBuffer();
+            SendPacket(buffer, (int)_stream.Length);
+            Array.Clear(buffer, 0, (int)_stream.Length);
+            _stream.Position = 0;
+            _stream.SetLength(0);
         }
 
         /// <summary>
