@@ -35,30 +35,28 @@
 
         private void SendUpdate(ModApi.Craft.ICraftNode craft)
         {
-            //almost all comment outs are due to type issues re: bool, int32, quad
-
             var logger = LoggerMod.Instance;
             logger.Send(FieldNames.Velocity, craft.Velocity);
             logger.Send(FieldNames.Altitude, craft.Altitude);
             logger.Send(FieldNames.AltitudeAgl, craft.AltitudeAgl);
-            //logger.Send(FieldNames.CanWarp, craft.CanWarp);
+            logger.Send(FieldNames.CanWarp, craft.CanWarp);
             logger.Send(FieldNames.Brake, craft.Controls.Brake);
             logger.Send(FieldNames.Pitch, craft.Controls.Pitch);
             logger.Send(FieldNames.Roll, craft.Controls.Roll);
             logger.Send(FieldNames.Slider1, craft.Controls.Slider1);
             logger.Send(FieldNames.Slider2, craft.Controls.Slider2);
-            //logger.Send(FieldNames.TargetDirection, craft.Controls.TargetDirection);
-            //logger.Send(FieldNames.TargetHeading, craft.Controls.TargetHeading);
+            logger.Send(FieldNames.TargetDirection, craft.Controls.TargetDirection);
+            logger.Send(FieldNames.TargetHeading, craft.Controls.TargetHeading);
             logger.Send(FieldNames.Throttle, craft.Controls.Throttle);
             logger.Send(FieldNames.TranslateForward, craft.Controls.TranslateForward);
             logger.Send(FieldNames.TranslateRight, craft.Controls.TranslateRight);
             logger.Send(FieldNames.TranslateUp, craft.Controls.TranslateUp);
-            //logger.Send(FieldNames.TranslationModeEnabled, craft.Controls.TranslationModeEnabled);
+            logger.Send(FieldNames.TranslationModeEnabled, craft.Controls.TranslationModeEnabled);
             logger.Send(FieldNames.Yaw, craft.Controls.Yaw);
             logger.Send(FieldNames.CraftMass, craft.CraftMass);
-            //logger.Send(FieldNames.CraftPartCount, craft.CraftPartCount);
-            //logger.Send(FieldNames.CurrentStage, craft.CraftScript.ActiveCommandPod.CurrentStage);
-            //logger.Send(FieldNames.NumStages, craft.CraftScript.ActiveCommandPod.NumStages);
+            logger.Send(FieldNames.CraftPartCount, craft.CraftPartCount);
+            logger.Send(FieldNames.CurrentStage, craft.CraftScript.ActiveCommandPod.CurrentStage);
+            logger.Send(FieldNames.NumStages, craft.CraftScript.ActiveCommandPod.NumStages);
             logger.Send(FieldNames.AirDensity, craft.CraftScript.AtmosphereSample.AirDensity);
             logger.Send(FieldNames.AirPressure, craft.CraftScript.AtmosphereSample.AirPressure);
             logger.Send(FieldNames.AtmosphereHeight, craft.CraftScript.AtmosphereSample.AtmosphereHeight);
@@ -69,11 +67,11 @@
             logger.Send(FieldNames.forward, craft.CraftScript.CenterOfMass.forward);
             logger.Send(FieldNames.localEulerAngles, craft.CraftScript.CenterOfMass.localEulerAngles);
             logger.Send(FieldNames.localPosition, craft.CraftScript.CenterOfMass.localPosition);
-            //logger.Send(FieldNames.localRotation, craft.CraftScript.CenterOfMass.localRotation);
+            logger.Send(FieldNames.localRotation, craft.CraftScript.CenterOfMass.localRotation);
             logger.Send(FieldNames.localScale, craft.CraftScript.CenterOfMass.localScale);
             logger.Send(FieldNames.position, craft.CraftScript.CenterOfMass.position);
             logger.Send(FieldNames.right, craft.CraftScript.CenterOfMass.right);
-            //logger.Send(FieldNames.rotation, craft.CraftScript.CenterOfMass.rotation);
+            logger.Send(FieldNames.rotation, craft.CraftScript.CenterOfMass.rotation);
             logger.Send(FieldNames.up, craft.CraftScript.CenterOfMass.up);
             logger.Send(FieldNames.CurrentEngineThrust, craft.CraftScript.FlightData.CurrentEngineThrust);
             logger.Send(FieldNames.GravityMagnitude, craft.CraftScript.FlightData.GravityMagnitude);
@@ -96,15 +94,15 @@
             logger.Send(FieldNames.AirEfficiency, craft.CraftScript.InletAir.AirEfficiency);
             logger.Send(FieldNames.AvailableAir, craft.CraftScript.InletAir.AvailableAir);
             logger.Send(FieldNames.ReEntryIntensity, craft.CraftScript.ReEntryIntensity);
-            //logger.Send(FieldNames.Heading, craft.Heading);
-            //logger.Send(FieldNames.InContactWithPlanet, craft.InContactWithPlanet);
-            //logger.Send(FieldNames.IsDestroyed, craft.IsDestroyed);
+            logger.Send(FieldNames.Heading, craft.Heading);
+            logger.Send(FieldNames.InContactWithPlanet, craft.InContactWithPlanet);
+            logger.Send(FieldNames.IsDestroyed, craft.IsDestroyed);
             logger.Send(FieldNames.Position, craft.Position);
             logger.Send(FieldNames.SolarPosition, craft.SolarPosition);
             logger.Send(FieldNames.SolarVelocity, craft.SolarVelocity);
             logger.Send(FieldNames.SphereOfInfluence, craft.SphereOfInfluence);
-            //logger.Send(FieldNames.SurfacePosition, craft.SurfacePosition);
-            //logger.Send(FieldNames.SurfaceRotation, craft.SurfaceRotation);
+            logger.Send(FieldNames.SurfacePosition, craft.SurfacePosition);
+            logger.Send(FieldNames.SurfaceRotation, craft.SurfaceRotation);
         }
     }
 
@@ -113,24 +111,24 @@
         Velocity,
         Altitude,
         AltitudeAgl,
-        //CanWarp,
+        CanWarp,
         Brake,
         Pitch,
         Roll,
         Slider1,
         Slider2,
-        //TargetDirection,
-        //TargetHeading,
+        TargetDirection,
+        TargetHeading,
         Throttle,
         TranslateForward,
         TranslateRight,
         TranslateUp,
-        //TranslationModeEnabled,
+        TranslationModeEnabled,
         Yaw,
         CraftMass,
-        //CraftPartCount,
-        //CurrentStage,
-        //NumStages,
+        CraftPartCount,
+        CurrentStage,
+        NumStages,
         AirDensity,
         AirPressure,
         AtmosphereHeight,
@@ -141,11 +139,11 @@
         forward,
         localEulerAngles,
         localPosition,
-        //localRotation,
+        localRotation,
         localScale,
         position,
         right,
-        //rotation,
+        rotation,
         up,
         CurrentEngineThrust,
         GravityMagnitude,
@@ -168,14 +166,14 @@
         AirEfficiency,
         AvailableAir,
         ReEntryIntensity,
-        //Heading,
-        //InContactWithPlanet,
-        //IsDestroyed,
+        Heading,
+        InContactWithPlanet,
+        IsDestroyed,
         Position,
         SolarPosition,
         SolarVelocity,
         SphereOfInfluence,
-        //SurfacePosition,
-        //SurfaceRotation
+        SurfacePosition,
+        SurfaceRotation
     }
 }

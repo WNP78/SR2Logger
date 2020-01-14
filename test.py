@@ -7,30 +7,35 @@ TypeFormats = [
     "d",
     "fff",
     "ddd",
-    "iii"]
+    "iii",
+    "?",
+    "i",
+    "ffff",
+    "dddd",
+    None]
 
 FieldNames = [
        "Velocity",
        "Altitude",
        "AltitudeAgl",
-       #"CanWarp",
+       "CanWarp",
        "Brake",
        "Pitch",
        "Roll",
        "Slider1",
        "Slider2",
-       #"TargetDirection",
-       #"TargetHeading",
+       "TargetDirection",
+       "TargetHeading",
        "Throttle",
        "TranslateForward",
        "TranslateRight",
        "TranslateUp",
-       #"TranslationModeEnabled",
+       "TranslationModeEnabled",
        "Yaw",
        "CraftMass",
-       #"CraftPartCount",
-       #"CurrentStage",
-       #"NumStages",
+       "CraftPartCount",
+       "CurrentStage",
+       "NumStages",
        "AirDensity",
        "AirPressure",
        "AtmosphereHeight",
@@ -41,11 +46,11 @@ FieldNames = [
        "forward",
        "localEulerAngles",
        "localPosition",
-       #"localRotation",
+       "localRotation",
        "localScale",
        "position",
        "right",
-       #"rotation",
+       "rotation",
        "up",
        "CurrentEngineThrust",
        "GravityMagnitude",
@@ -68,15 +73,15 @@ FieldNames = [
        "AirEfficiency",
        "AvailableAir",
        "ReEntryIntensity",
-       #"Heading",
-       #"InContactWithPlanet",
-       #"IsDestroyed",
+       "Heading",
+       "InContactWithPlanet",
+       "IsDestroyed",
        "Position",
        "SolarPosition",
        "SolarVelocity",
        "SphereOfInfluence",
-       #"SurfacePosition",
-       #"SurfaceRotation"
+       "SurfacePosition",
+       "SurfaceRotation"
        ]
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -84,9 +89,12 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind(("127.0.0.1", 2873))
 
 def process(data):
-    nm, tp = struct.unpack("ii", data[:8])
+    nm, tp = struct.unpack("iB", data[:5])
     fmt = TypeFormats[tp]
-    val = struct.unpack(fmt, data[8:8 + struct.calcsize(fmt)])
+    if fmt == None:
+        val = None # null type
+    else:
+        val = struct.unpack(fmt, data[5:5 + struct.calcsize(fmt)])
     print(FieldNames[nm], ": ", val, sep="")
 
 while 1:
