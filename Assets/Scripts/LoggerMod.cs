@@ -84,36 +84,66 @@ namespace Assets.Scripts
             MemoryStream stream = new MemoryStream();
             BinaryWriter writer = new BinaryWriter(stream);
             writer.Write((int)field);
-            if (data is float f)
+            if (data == null)
             {
-                writer.Write((int)TypeCodes.Float32);
+                writer.Write((byte)TypeCodes.NullType);
+            }
+            else if (data is float f)
+            {
+                writer.Write((byte)TypeCodes.Float32);
                 writer.Write(f);
             }
             else if (data is double d)
             {
-                writer.Write((int)TypeCodes.Float64);
+                writer.Write((byte)TypeCodes.Float64);
                 writer.Write(d);
             }
             else if (data is Vector3 v)
             {
-                writer.Write((int)TypeCodes.Vector3);
+                writer.Write((byte)TypeCodes.Vector3);
                 writer.Write(v.x);
                 writer.Write(v.y);
                 writer.Write(v.z);
             }
             else if (data is Vector3d vd)
             {
-                writer.Write((int)TypeCodes.Vector3d);
+                writer.Write((byte)TypeCodes.Vector3d);
                 writer.Write(vd.x);
                 writer.Write(vd.y);
                 writer.Write(vd.z);
             }
             else if (data is Vector3i vi)
             {
-                writer.Write((int)TypeCodes.Vector3i);
+                writer.Write((byte)TypeCodes.Vector3i);
                 writer.Write(vi.x);
                 writer.Write(vi.y);
                 writer.Write(vi.z);
+            }
+            else if (data is bool b)
+            {
+                writer.Write((byte)TypeCodes.Boolean);
+                writer.Write(b);
+            }
+            else if (data is int i)
+            {
+                writer.Write((byte)TypeCodes.Int32);
+                writer.Write(i);
+            }
+            else if (data is Quaternion q)
+            {
+                writer.Write((byte)TypeCodes.Quaternion);
+                writer.Write(q.x);
+                writer.Write(q.y);
+                writer.Write(q.z);
+                writer.Write(q.w);
+            }
+            else if (data is Quaterniond qd)
+            {
+                writer.Write((byte)TypeCodes.Quaterniond);
+                writer.Write(qd.x);
+                writer.Write(qd.y);
+                writer.Write(qd.z);
+                writer.Write(qd.w);
             }
             else
             {
@@ -136,6 +166,11 @@ namespace Assets.Scripts
         Float64,
         Vector3,
         Vector3d,
-        Vector3i
+        Vector3i,
+        Boolean,
+        Int32,
+        Quaternion,
+        Quaterniond,
+        NullType
     }
 }
