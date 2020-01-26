@@ -1,9 +1,11 @@
 # SR2Logger
-SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via UDP for storage to files and/or display in real time. S2Logger provides an example data receiver, `recevier.py`; however, the user is expected to develop their own listener application to write the log to files or display plots of the data.
+SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via UDP for storage to files and/or display in real time. SR2Logger is represented by a flight data instrumentation part in the game.
 
 ![Orion PA-1 Instrumentation System](https://www.nasa.gov/sites/default/files/images/503496main_Orion_PA-1_inst_system_226.jpg)
 
 _Orion PA-1 Instrumentation System_
+
+S2Logger provides an example data receiver, `recevier.py`; however, the user is expected to develop their own listener application to write the log to files or display plots of the data.
 
 ## Prerequisites
 
