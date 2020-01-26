@@ -1,5 +1,9 @@
 # SR2Logger
-SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via UDP for storage to files and/or display in real time. S2Logger provides an example data receiver, `test.py`; however, the user is expected to develop their own listener application to write the log to files or display plots of the data.
+SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via UDP for storage to files and/or display in real time. S2Logger provides an example data receiver, `recevier.py`; however, the user is expected to develop their own listener application to write the log to files or display plots of the data.
+
+![Orion PA-1 Instrumentation System](https://www.nasa.gov/sites/default/files/images/503496main_Orion_PA-1_inst_system_226.jpg)
+
+_Orion PA-1 Instrumentation System_
 
 ## Prerequisites
 
@@ -14,7 +18,7 @@ SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via U
      1. The program should set a variable "LogFrequency" to the number of samples per second to be send
      2. The program then can set any number of variables beginning with "log_". These will be logged.
  4. In the part's settings panel you can also set the host and port to send packets to. This is localhost:2873 by default.
- 5. Start either the provided reciever.py script or your own derived receiver script.
- 6. Launch the craft, click the orange black box, and click the activate button in the context menu to start logging.
+ 5. Start either the provided `reciever.py` script or your own derived receiver script.
+ 6. Launch the craft, click the Orange Black Box, and click the activate button in the context menu to start logging.
  
  
