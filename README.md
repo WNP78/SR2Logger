@@ -9,7 +9,7 @@ SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via U
 ## Procedure
 
  1. Enable the SR2Logger mod in SimpleRockets 2.
- 2. Add a "Orange Black Box" part from the gizmos category to your craft.
+ 2. Add an "Orange Black Box" part from the gizmos category to your craft.
  3. Edit the part's program.
      1. The program should set a variable "LogFrequency" to the number of samples per second to be send
      2. The program then can set any number of variables beginning with "log_". These will be logged.
