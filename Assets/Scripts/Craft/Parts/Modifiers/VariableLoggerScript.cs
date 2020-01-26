@@ -37,7 +37,10 @@ namespace Assets.Scripts.Craft.Parts.Modifiers
 
         float timeSinceLast = 0;
 
-        public override void OnActivated()
+        /// <summary>
+        /// Initialises this instance.
+        /// </summary>
+        private void EnsureInitialised()
         {
             if (!_inited)
             {
@@ -56,21 +59,12 @@ namespace Assets.Scripts.Craft.Parts.Modifiers
             }
         }
 
-        private ExpressionResult GetVariable(string name)
-        {
-            if (!_inited)
-            {
-                throw new Exception("Not initialised");
-            }
-
-            return flightProgramScript.GetGlobalVariable(name);
-        }
-
         public void FlightFixedUpdate(in FlightFrameData frame)
         {
-            if (frame.IsPaused || frame.IsWarping || !PartScript.Data.Activated || !_inited) { return; }
+            if (frame.IsPaused || frame.IsWarping || !PartScript.Data.Activated) { return; }
+            EnsureInitialised();
 
-            var rate = (float?)GetVariable("LogFrequency")?.NumberValue ?? 0f;
+            var rate = (float?)flightProgramScript.GetGlobalVariable("LogFrequency")?.NumberValue ?? 0f;
             if (!Mathf.Approximately(rate, sampleRate))
             {
                 sampleRate = rate;
