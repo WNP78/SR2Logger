@@ -9,8 +9,12 @@ SR2Logger is a mod for SimpleRockets 2 that transmits simulation variables via U
 ## Procedure
 
  1. Enable the SR2Logger mod in SimpleRockets 2.
- 2. Start the receiver/listener, e.g. `python test.py`.
- 3. In Flight Mode, open the debugger console.
- 4. Type `SetSampleRate 2` to start transmitting the UDP packets at 2 samples per second.
+ 2. Add an "Orange Black Box" part from the gizmos category to your craft.
+ 3. Edit the part's program.
+     1. The program should set a variable "LogFrequency" to the number of samples per second to be send
+     2. The program then can set any number of variables beginning with "log_". These will be logged.
+ 4. In the part's settings panel you can also set the host and port to send packets to. This is localhost:2873 by default.
+ 5. Start either the provided reciever.py script or your own derived receiver script.
+ 6. Launch the craft, click the orange black box, and click the activate button in the context menu to start logging.
  
  

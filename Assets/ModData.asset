@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -1366777262, guid: c37b925f2b4978342b2e0b83a8fa404a, type: 3}
   m_Name: ModData
   m_EditorClassIdentifier: 
-  _assemblies: []
+  _assemblies:
+  - SR2Logger.dll
   _author: WNP78
   _description: Logs information to an external application over UDP
   _loadPriority: 1000
@@ -28,7 +29,8 @@ MonoBehaviour:
   _versionMajor: 1
   _versionMinor: 0
   _partCategories: []
-  _parts: []
+  _parts:
+  - {fileID: 4900000, guid: 92fd84bab57d26d44949d6680d0f4da8, type: 3}
   _partStyleExtensions: []
   _partTextureStyles: []
   _persistentObjects: []
