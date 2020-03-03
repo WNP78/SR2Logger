@@ -20,5 +20,12 @@ Instructions:
 Notes:
     I am not sure of the behaviour in time accelerated situations, so please DISABLE the action group before using fast forward or other time acceleration modes (you may experience performance issuess otherwise)
     
+    Files included for convenience:
+        SR2Logger_PSMap.xml:
+            Example flight program to load into the Orange Black Box. (this is the default program used for PSMap)
+        Prefab Gizmo (cedb62a6-ae49-43e2-90f5-6a5220b1d9bf.xml)
+            This is the gizmo named SR2Logger-PSMap
+    *Both of these files are installed/copied by the main script. 
+
 
     
