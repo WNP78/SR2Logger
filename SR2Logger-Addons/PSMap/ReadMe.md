@@ -1,12 +1,12 @@
 ___
-#SR2Logger-PSMap
+# SR2Logger-PSMap
 ![Scale](https://i.ibb.co/ZKNgkXY/SR2-Logger-PSMap.png)
 Hi All,
 
 With the help of plenty of community members (WNP, pedro, nathan, cofi, mario, nota, mod), I've managed to leverage the output of SR2Logger to create an external real time map. 
 
 ___
-##Basic features: 
+## Basic features: 
 * **Resizable** window which scales everything accordingly (*automaintains a 2:1 aspect ratio for mapping*) 
 * Shows 'realtime' position of craft 
 * Shows 'realtime' heading of craft
