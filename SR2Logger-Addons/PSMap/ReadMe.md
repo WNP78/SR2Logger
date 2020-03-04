@@ -1,12 +1,12 @@
 ___
-# SR2Logger-PSMap
+#SR2Logger-PSMap
 ![Scale](https://i.ibb.co/ZKNgkXY/SR2-Logger-PSMap.png)
 Hi All,
 
 With the help of plenty of community members (WNP, pedro, nathan, cofi, mario, nota, mod), I've managed to leverage the output of SR2Logger to create an external real time map. 
 
 ___
-## Basic features: 
+##Basic features: 
 * **Resizable** window which scales everything accordingly (*automaintains a 2:1 aspect ratio for mapping*) 
 * Shows 'realtime' position of craft 
 * Shows 'realtime' heading of craft
@@ -15,10 +15,12 @@ ___
 ## Requires
 * SR2Logger mod installed and enabled
 ___
-## Download
+## Download / Links
 [github repo (currently a fork a few commits ahead of WNPs repo)](https://github.com/nethereal/SR2Logger)
 
 [SR2Logger Mod Download (SR2 Beta ONLY)](https://drive.google.com/file/d/1WReOzMlEweiYChXjeBBmXfnQtqpOKhos/view?usp=sharing)
+
+[SR2 Forum Post for SR2Logger-PSMap](https://www.simplerockets.com/Forums/View/56931)
 ___
 ## Installation notes
 * Make sure you are running the ***Beta*** branch of SimpleRockets 2 in steam
