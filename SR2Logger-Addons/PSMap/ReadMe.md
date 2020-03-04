@@ -19,11 +19,11 @@ ___
 ___
 
 ## Download / Links
-[github repo (currently a fork a few commits ahead of WNPs repo)](https://github.com/nethereal/SR2Logger)
+[SR2Logger-PSMap](https://github.com/nethereal/SR2Logger) script files for PSMap (as part of a fork of SR2Logger)
 
-[SR2Logger Mod Download (SR2 Beta ONLY)](https://drive.google.com/file/d/1WReOzMlEweiYChXjeBBmXfnQtqpOKhos/view?usp=sharing)
+[SR2Logger Mod Download](https://drive.google.com/file/d/1WReOzMlEweiYChXjeBBmXfnQtqpOKhos/view?usp=sharing) - SR2 Beta ONLY
 
-[SR2 Forum Post for SR2Logger-PSMap](https://www.simplerockets.com/Forums/View/56931)
+[SR2Logger-PSMap forum thread](https://www.simplerockets.com/Forums/View/56931)
 
 [Get SimpleRockets 2 on Steam!](https://store.steampowered.com/widget/870200/)
 ___
