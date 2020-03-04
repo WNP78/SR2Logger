@@ -10,7 +10,7 @@ ___
 * **Resizable** window which scales everything accordingly (*automaintains a 2:1 aspect ratio for mapping*) 
 * Shows 'realtime' position of craft 
 * Shows 'realtime' heading of craft
-* Completely written in powershell (requires no additional software on windows)
+* Completely written in **powershell** (*requires no additional software on windows*)
 ___
 ## Requires
 * SR2Logger mod installed and enabled
