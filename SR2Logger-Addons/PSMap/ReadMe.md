@@ -1,3 +1,6 @@
+Forum post:
+https://www.simplerockets.com/Forums/View/56931
+
 Requirements:
 
     SR2 NOT running 
