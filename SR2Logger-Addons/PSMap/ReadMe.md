@@ -19,7 +19,7 @@ ___
 ___
 
 ## Download / Links
-  - [SR2Logger-PSMap](https://github.com/nethereal/SR2Logger) script files for PSMap (as part of a fork of SR2Logger)
+  - [SR2Logger-PSMap](https://github.com/nethereal/SR2Logger) - Script files for PSMap (as part of a SR2Logger fork)
 
   - [SR2Logger Mod Download](https://drive.google.com/file/d/1WReOzMlEweiYChXjeBBmXfnQtqpOKhos/view?usp=sharing) - SR2 Beta ONLY
 
