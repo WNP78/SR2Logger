@@ -23,7 +23,7 @@ ___
 
   - [SR2Logger Mod Download](https://drive.google.com/file/d/1WReOzMlEweiYChXjeBBmXfnQtqpOKhos/view?usp=sharing) - SR2 Beta ONLY
 
-  - [SR2Logger-PSMap forum thread](https://www.simplerockets.com/Forums/View/56931)
+  - [SR2Logger-PSMap SR2 forum thread](https://www.simplerockets.com/Forums/View/56931)
 
   - [Get SimpleRockets 2 on Steam!](https://store.steampowered.com/widget/870200/)
 ___
