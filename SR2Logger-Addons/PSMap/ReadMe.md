@@ -30,9 +30,10 @@ ___
 
 ## Installation notes
 * Make sure you are running the ***Beta*** branch of SimpleRockets 2 in steam
-* Download, install, and enable the SR2Logger mod in SR2 (2nd link), then exit SR2. 
+* Download, install, and enable the SR2Logger mod in SR2 (2nd link)
 * **Close** SR2
 * Download and extract the zip from the repo link below. the PSMap files are located in: 
+  - <extractionpath>SR2Logger/SR2Logger-Addons/PSMap
 * **Before SR2 is running**, launch the script:   
   - SR2Logger/SR2Logger-Addons/PSMap/SR2Logger-PSMap-v0.1.ps1
 -  How to launch: 
