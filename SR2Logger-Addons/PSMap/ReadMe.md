@@ -36,7 +36,7 @@ ___
   - <extractionpath>SR2Logger/SR2Logger-Addons/PSMap
 * **Before SR2 is running**, launch the script:   
   - SR2Logger/SR2Logger-Addons/PSMap/SR2Logger-PSMap-v0.1.ps1
--  How to launch: 
+-  How to launch:
 1. Open a new **powershell** console (Windows Key + R, type: powershell, hit Enter)
 2.  Navigate to the directory which contains the script files:
         - cd <fullpath>
