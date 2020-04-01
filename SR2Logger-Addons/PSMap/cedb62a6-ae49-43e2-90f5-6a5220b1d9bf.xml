@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerParts>
+  <DesignerPart name="SR2Logger-PSMap" category="Sub Assemblies" description="" order="0" showInDesigner="true">
+    <Assembly xmlVersion="11">
+      <Parts>
+        <Part id="140" partType="OrangeBlackBox" position="0,0,1.192093E-07" rotation="270,5.000016,0" activationGroup="3" materials="0,1,2,3,4">
+          <Drag drag="0,0.0997485,0.0997485,0,0.09401334,0.09401334" area="0,0.0997485,0.0997485,0,0.09401334,0.09401334" />
+          <Config collisionPreventExternalDisconnections="false" dragScale="0" heatShield="1000" includeInDrag="false" massScale="0" maxTemperature="3000" partCollisionHandling="Never" partCollisionResponse="None" partScale="0.3,0.3,0.3" preventDebris="false" staticPriceAndMass="false" />
+          <FlightProgram timeSinceLaunch="0" staticPriceAndMass="false">
+            <Program name="SR2Logger_PSMap">
+              <Variables>
+                <Variable name="log_Nav_Heading" number="0" />
+                <Variable name="log_Nav_Position" number="0" />
+                <Variable name="LogFrequency" number="0" />
+                <Variable name="LogUpdateWait" number="0" />
+              </Variables>
+              <Instructions>
+                <Event event="FlightStart" id="0" style="flight-start" pos="-1112.113,-53.50229" />
+                <SetVariable id="1" style="set-variable">
+                  <Variable list="false" local="false" variableName="LogFrequency" />
+                  <Constant text="10" />
+                </SetVariable>
+                <SetVariable id="2" style="set-variable">
+                  <Variable list="false" local="false" variableName="LogUpdateWait" />
+                  <BinaryOp op="/" style="op-div">
+                    <Constant text="1" />
+                    <Variable list="false" local="false" variableName="LogFrequency" />
+                  </BinaryOp>
+                </SetVariable>
+              </Instructions>
+              <Instructions>
+                <Event event="FlightStart" id="3" style="flight-start" pos="-1107.662,-228.625" />
+                <Comment id="4" style="comment">
+                  <Constant style="comment-text" canReplace="false" text="SR2Logger - PSMap" />
+                </Comment>
+                <While id="5" style="while">
+                  <Constant style="true" bool="true" />
+                  <Instructions>
+                    <SetVariable id="6" style="set-variable">
+                      <Variable list="false" local="false" variableName="log_Nav_Position" />
+                      <Planet op="toLatLongAgl" style="planet-to-lat-long-agl">
+                        <CraftProperty property="Nav.Position" style="prop-nav" />
+                      </Planet>
+                    </SetVariable>
+                    <SetVariable id="7" style="set-variable">
+                      <Variable list="false" local="false" variableName="log_Nav_Heading" />
+                      <CraftProperty property="Nav.CraftHeading" style="prop-nav" />
+                    </SetVariable>
+                    <WaitSeconds id="8" style="wait-seconds">
+                      <Variable list="false" local="false" variableName="LogUpdateWait" />
+                    </WaitSeconds>
+                  </Instructions>
+                </While>
+              </Instructions>
+              <Expressions />
+            </Program>
+          </FlightProgram>
+          <SR2Logger.VariableLogger host="localhost" port="2873" staticPriceAndMass="false" />
+        </Part>
+      </Parts>
+      <Connections />
+      <Collisions />
+      <Bodies />
+    </Assembly>
+  </DesignerPart>
+</DesignerParts>
